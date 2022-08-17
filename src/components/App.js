@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+
 //COMPONENTS
 import Header from '../components/Header';
+import Item from '../components/Item';
 //SERVICES
 import getApiData from '../services/listProducts';
 
@@ -20,7 +22,9 @@ function App() {
       <header>
         <Header />
       </header>
-      <main></main>
+      <main>
+        <Item dataMobile={dataMobile} />
+      </main>
     </>
   );
 }
