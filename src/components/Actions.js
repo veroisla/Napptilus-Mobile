@@ -1,3 +1,4 @@
+// sELECTORES  DE ALMACENAMIENTO Y DE COLOR
 import React from 'react';
 
 function Actions() {

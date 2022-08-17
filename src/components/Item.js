@@ -1,3 +1,5 @@
+// lISTADO- Info del producto: img, marca, modelo, precio
+
 import React from 'react';
 
 function Item() {
