@@ -4,13 +4,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { Breadcrumbs, Link } from '@material-ui/core';
 
 import '../styles/components/Header.scss';
 import logo from '../images/logo.white.PNG';
 
 function Header() {
   return (
-    <header>
+    <header className="header">
       <Link to={'/'}>
         {' '}
         <img
@@ -20,7 +21,7 @@ function Header() {
           className="header__logo"
         />
       </Link>
-      <h1>Napptilus Mobile</h1>
+      <h1>Napptilus</h1>
     </header>
   );
 }

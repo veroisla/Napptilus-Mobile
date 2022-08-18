@@ -6,13 +6,17 @@ import { matchPath, useLocation } from 'react-router';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Item from '../components/Item';
-import Description from './Description';
+import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 
 function App() {
   const [dataMobile, setDataMobile] = useState([]);
-  const [filterByModel, setFilterByModel] = useState('');
+  const [inputSearch, setInputSearch] = useState('');
+
+  //---------->
+
+  //--------->
 
   // ITEM LIST
   useEffect(() => {
@@ -24,13 +28,13 @@ function App() {
 
   //FILTRO POR INPUT
   const handleFilterByText = (value) => {
-    setFilterByModel(value);
+    setInputSearch(value);
   };
 
   const results = dataMobile.filter((item) => {
     return (
-      item.model.toLowerCase().includes(filterByModel.toLowerCase()) ||
-      item.brand.toLowerCase().includes(filterByModel.toLowerCase())
+      item.model.toLowerCase().includes(inputSearch.toLowerCase()) ||
+      item.brand.toLowerCase().includes(inputSearch.toLowerCase())
     );
   });
 
@@ -39,7 +43,7 @@ function App() {
     ev.preventDefault();
   };
 
-  //OBTENER ID DE LA URL
+  //OBTENER ID DE LA URL ----> esto funciona!!!!!
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
   console.log(dataPath);

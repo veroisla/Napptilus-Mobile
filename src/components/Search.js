@@ -1,9 +1,8 @@
 import React from 'react';
-
+//PONER COMENTARIO SI HACEN BÚSQUEDA QUE NO EXISTE
 function Search(props) {
   const handleChange = (ev) => {
     props.handleFilterByText(ev.target.value);
-    console.log('yujuuu');
   };
   const handleSubmitForm = (props) => {
     props.PreventSubmitForm();
