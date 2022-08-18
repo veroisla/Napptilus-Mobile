@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/components/Item.scss';
 import Image from '../components/Image';
 
 function Item(props) {
@@ -17,8 +18,8 @@ function Item(props) {
     );
   });
   return (
-    <section>
-      <ul>{mobileElement}</ul>
+    <section className="item__section">
+      <ul className="item__list">{mobileElement}</ul>
     </section>
   );
 }

@@ -1,6 +1,10 @@
+@import "../../styles/Core/Vars.scss";
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: $--color-black;
 }

@@ -1,0 +1,10 @@
+@import "../../styles/Core/Reset.scss";
+@import "../../styles/Core/Vars.scss";
+
+.header {
+
+    &__logo {
+        width: 5rem;
+        margin-top: 1.25rem;
+    }
+}
