@@ -14,10 +14,6 @@ function App() {
   const [dataMobile, setDataMobile] = useState([]);
   const [inputSearch, setInputSearch] = useState('');
 
-  //---------->
-
-  //--------->
-
   // ITEM LIST
   useEffect(() => {
     getApiData().then((data) => {
@@ -43,10 +39,9 @@ function App() {
     ev.preventDefault();
   };
 
-  //OBTENER ID DE LA URL ----> esto funciona!!!!!
+  //OBTENER ID DE LA URL
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
-  console.log(dataPath);
 
   const mobileId = dataPath !== null ? dataPath.params.id : null;
   const mobileFound = dataMobile.find((item) => item.id === mobileId);
