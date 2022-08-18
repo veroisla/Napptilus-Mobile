@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 
 //COMPONENTS
 import Header from '../components/Header';
+import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from './Description';
 
@@ -13,7 +14,9 @@ import getApiData from '../services/listProducts';
 
 function App() {
   const [dataMobile, setDataMobile] = useState([]);
+  const [filterByModel, setFilterByModel] = useState('');
 
+  // ITEM LIST
   useEffect(() => {
     getApiData().then((data) => {
       setDataMobile(data);
@@ -21,6 +24,20 @@ function App() {
   }, []);
   console.log(dataMobile);
 
+  //FILTRO POR INPUT
+  const handleFilterByText = (value) => {
+    setFilterByModel(value);
+  };
+
+  const mobileFilter = dataMobile.filter((model) => {
+    return model.model.toLowerCase().includes(filterByModel.toLowerCase());
+  });
+
+  // .filter((model) => {
+  //   return model.model.toLowerCase().includes(filterByBrand.toLowerCase());
+  // });
+
+  //OBTENER ID DE LA URL
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
   console.log(dataPath);
@@ -37,7 +54,8 @@ function App() {
           element={
             <>
               <Header />
-              <Item dataMobile={dataMobile} />
+              <Search handleFilterByText={handleFilterByText} />
+              <Item dataMobile={mobileFilter} />
             </>
           }
         />
