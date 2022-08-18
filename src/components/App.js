@@ -22,7 +22,7 @@ function App() {
   console.log(dataMobile);
 
   const { pathname } = useLocation();
-  const dataPath = matchPath('/product/:id', pathname);
+  const dataPath = matchPath('/api/product/:id', pathname);
   console.log(dataPath);
 
   const mobileId = dataPath !== null ? dataPath.params.id : null;
@@ -42,7 +42,7 @@ function App() {
           }
         />
         <Route
-          path="/product/:id"
+          path="/api/product/:id"
           element={<Description mobile={mobileFound} />}
         />
       </Routes>
