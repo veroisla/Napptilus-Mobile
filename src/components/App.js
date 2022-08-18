@@ -3,13 +3,11 @@ import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 
-//COMPONENTS
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from './Description';
 
-//SERVICES
 import getApiData from '../services/listProducts';
 
 function App() {
@@ -29,13 +27,12 @@ function App() {
     setFilterByModel(value);
   };
 
-  const mobileFilter = dataMobile.filter((model) => {
-    return model.model.toLowerCase().includes(filterByModel.toLowerCase());
+  const results = dataMobile.filter((item) => {
+    return (
+      item.model.toLowerCase().includes(filterByModel.toLowerCase()) ||
+      item.brand.toLowerCase().includes(filterByModel.toLowerCase())
+    );
   });
-
-  // .filter((model) => {
-  //   return model.model.toLowerCase().includes(filterByBrand.toLowerCase());
-  // });
 
   //OBTENER ID DE LA URL
   const { pathname } = useLocation();
@@ -55,7 +52,7 @@ function App() {
             <>
               <Header />
               <Search handleFilterByText={handleFilterByText} />
-              <Item dataMobile={mobileFilter} />
+              <Item dataMobile={results} />
             </>
           }
         />
