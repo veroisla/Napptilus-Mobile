@@ -54,6 +54,9 @@ const Description = (props) => {
       {/* --> Poner camara primaria y secundaria?? */}
       <p>Dimensiones: {mobileDescription.dimentions}</p>
       <p>Peso: {mobileDescription.weight}</p>
+      <button type="text">
+        <a href="#/">Listado productos</a>
+      </button>
     </article>
   );
 };

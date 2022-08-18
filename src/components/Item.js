@@ -7,7 +7,7 @@ function Item(props) {
   const mobileElement = props.dataMobile.map((mobile) => {
     return (
       <Link to={`/api/product/${mobile.id}`}>
-        <li key={mobile.id}>
+        <li key={mobile.id} className="item__mobile">
           <Image mobile={mobile} />
           <h4>{mobile.brand}</h4>
           <h5>{mobile.model}</h5>
