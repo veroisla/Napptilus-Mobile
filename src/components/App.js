@@ -34,6 +34,11 @@ function App() {
     );
   });
 
+  //PREVENIR ENVÍO POR DEFECTO DEL FORMUALRIO
+  const PreventSubmitForm = (ev) => {
+    ev.preventDefault();
+  };
+
   //OBTENER ID DE LA URL
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
@@ -51,7 +56,10 @@ function App() {
           element={
             <>
               <Header />
-              <Search handleFilterByText={handleFilterByText} />
+              <Search
+                handleFilterByText={handleFilterByText}
+                PreventSubmitForm={PreventSubmitForm}
+              />
               <Item dataMobile={results} />
             </>
           }

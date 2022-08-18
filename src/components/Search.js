@@ -1,5 +1,3 @@
-// Input de búsqueda se comparará con la Marca y el Modelo.
-
 import React from 'react';
 
 function Search(props) {
@@ -7,9 +5,12 @@ function Search(props) {
     props.handleFilterByText(ev.target.value);
     console.log('yujuuu');
   };
+  const handleSubmitForm = (props) => {
+    props.PreventSubmitForm();
+  };
   return (
     <section>
-      <form>
+      <form onSubmit={handleSubmitForm}>
         <label htmlFor="search">Búsqueda: </label>
         <input
           type="text"
