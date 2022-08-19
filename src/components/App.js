@@ -9,15 +9,19 @@ import Item from '../components/Item';
 import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
+import localStorage from '../services/localStorage';
 
 function App() {
-  const [dataMobile, setDataMobile] = useState([]);
-  const [inputSearch, setInputSearch] = useState('');
+  const [dataMobile, setDataMobile] = useState(
+    localStorage.get('dataMobile', [])
+  );
   console.log(dataMobile);
+  const [inputSearch, setInputSearch] = useState('');
 
   // ITEM LIST
   useEffect(() => {
     getApiData().then((data) => {
+      localStorage.set('dataMobile', data);
       setDataMobile(data);
     });
   }, []);
