@@ -1,2 +1,16 @@
 @import "../../styles/Core/Reset.scss";
 @import "../../styles/Core/Vars.scss";
+
+.btn--añadir {
+    font-size: 1.625rem;
+    color: #fff;
+    text-align: left;
+    background: #FF8F83;
+    padding: 1.25rem 1rem;
+    border: none;
+    border-radius: 0;
+    margin: 2rem 0 0;
+    &:hover {
+        color: $--color-black;
+    }
+}

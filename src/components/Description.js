@@ -6,6 +6,7 @@ import { getDescMobile } from '../services/descriptionProduct';
 // import localStorage from '../services/localStorage';
 
 import Image from '../components/Image';
+import '../styles/components/Description.scss';
 
 function Description(props) {
   const [mobileDescription, setmobileDescription] = useState(null);
@@ -134,7 +135,9 @@ function Description(props) {
 
       {/* --> BOTÓN AÑADIR */}
 
-      <button type="button">Añadir</button>
+      <button type="button" className="btn--añadir">
+        Añadir
+      </button>
 
       {/* VOLVER A HOME */}
 

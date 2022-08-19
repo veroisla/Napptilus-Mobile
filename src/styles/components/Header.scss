@@ -3,10 +3,16 @@
 
 .header {
 
-    margin-bottom: 4rem;
+    // padding-top: 18px!important;
+    padding-bottom: 18px!important;
+    box-shadow: 0 4px 10px -10px $--color-cream 60%;
+   
 
     &__logo {
         width: 5rem;
-        margin-top: 1.25rem;
+        &:hover {
+        background-color: $--color-ligth-pink;    
+        }
+        
     }
 }

@@ -10,6 +10,7 @@ import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
+import { Breadcrumbs } from '@material-ui/core';
 
 function App() {
   const [dataMobile, setDataMobile] = useState(
@@ -24,7 +25,6 @@ function App() {
   useEffect(() => {
     if (dataMobile.length === 0) {
       getApiData().then((dataFromApi) => {
-        // localStorage.set('dataMobile', dataFromApi);
         setDataMobile(dataFromApi);
       });
     }
@@ -65,7 +65,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header /> <Breadcrumbs />
       <Routes>
         <Route
           path="/"
