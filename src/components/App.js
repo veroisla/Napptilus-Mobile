@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { matchPath, useLocation } from 'react-router';
+import { useLocation, matchPath } from 'react-router';
 
 import Header from '../components/Header';
 import Search from '../components/Search';
@@ -13,6 +13,7 @@ import getApiData from '../services/listProducts';
 function App() {
   const [dataMobile, setDataMobile] = useState([]);
   const [inputSearch, setInputSearch] = useState('');
+  console.log(dataMobile);
 
   // ITEM LIST
   useEffect(() => {

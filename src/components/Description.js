@@ -52,7 +52,7 @@
 
 // export default Description;
 
-//--->>>> OTRA MANERA MÁS LIMPIA, CON EL FECTH EN OTRO COMPONENTe, pero los datos se cargan más lento que de la otra manera, y no tengo las variables de estado en compoente App
+//--->>>> OTRA MANERA MÁS LIMPIA, CON EL FECTH EN OTRO COMPONENTE, pero los datos se cargan más lento que de la otra manera, y tampoco tengo las variables de estado en componente App
 
 import React from 'react';
 import { useEffect, useState } from 'react';
@@ -62,21 +62,57 @@ import { getDescMobile } from '../services/descriptionProduct';
 
 function Description(props) {
   const [mobileDescription, setmobileDescription] = useState(null);
+  console.log(mobileDescription);
 
-  //
   const params = useParams();
   useEffect(() => {
     getDescMobile(params.id, setmobileDescription);
   }, []);
 
-  // GET COLORS
-  const getColors = () => {
-    const mobileColors = mobileDescription.map((mobile) => mobile.colors);
-    console.log(mobileColors);
+  const [internalMemory, setInternalMemory] = useState([]);
+
+  const handleSelectByMemory = (value) => {
+    setInternalMemory(value);
+  };
+
+  const handleChange = (ev) => {
+    handleSelectByMemory(ev.target.value);
+  };
+
+  // const renderMemory = () => {
+  //   return mobileDescription.internalMemory.map((memory, index) => {
+  //     return (
+  //       <option value={memory} key={index}>
+  //         {memory}
+  //       </option>
+  //     );
+  //   });
+  // };
+
+  const renderMemory = () => {
+    if (!mobileDescription || !mobileDescription.internalMemory) {
+      return null;
+    }
+
+    return mobileDescription.internalMemory.map((memory, index) => {
+      return (
+        <option value={memory} key={index}>
+          {memory}
+        </option>
+      );
+    });
   };
 
   return (
     <>
+      <form action="">
+        <label htmlFor="">Almacenamiento: </label>
+        <select name="" id="" onChange={handleChange} value={internalMemory}>
+          <option value="">Seleccione</option>
+          {renderMemory()}
+        </select>
+      </form>
+
       {mobileDescription != null ? (
         <article>
           <Image mobile={props.mobile} />
@@ -100,12 +136,6 @@ function Description(props) {
       ) : (
         'Cargando...'
       )}
-      <form action="">
-        <label htmlFor="">Almacenamiento: </label>
-        <select name="" id="">
-          <option value="">Seleccione</option>
-        </select>
-      </form>
       <button type="text">
         <a href="#/">Listado productos</a>
       </button>
