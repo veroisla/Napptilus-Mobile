@@ -15,6 +15,7 @@ function Search(props) {
           type="text"
           placeholder="Busca por marca o modelo"
           onChange={handleChange}
+          value={props.inputSearch}
         />
       </form>
     </section>

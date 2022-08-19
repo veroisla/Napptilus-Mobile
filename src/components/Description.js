@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getDescMobile } from '../services/descriptionProduct';
-import localStorage from '../services/localStorage';
+// import localStorage from '../services/localStorage';
 
 import Image from '../components/Image';
 
@@ -15,7 +15,7 @@ function Description(props) {
 
   const params = useParams();
   useEffect(() => {
-    localStorage.set('mobileDescription', params);
+    // localStorage.set('mobileDescription', params);
     getDescMobile(params.id, setmobileDescription);
   }, []);
 

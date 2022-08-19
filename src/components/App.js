@@ -15,17 +15,28 @@ function App() {
   const [dataMobile, setDataMobile] = useState(
     localStorage.get('dataMobile', [])
   );
-  console.log(dataMobile);
-  const [inputSearch, setInputSearch] = useState('');
+
+  const [inputSearch, setInputSearch] = useState(
+    localStorage.get('inputSearch', '')
+  );
 
   // ITEM LIST
   useEffect(() => {
-    getApiData().then((data) => {
-      localStorage.set('dataMobile', data);
-      setDataMobile(data);
-    });
+    if (dataMobile.length === 0) {
+      getApiData().then((dataFromApi) => {
+        // localStorage.set('dataMobile', dataFromApi);
+        setDataMobile(dataFromApi);
+      });
+    }
+    console.log(dataMobile);
   }, []);
-  console.log(dataMobile);
+
+  //LOCALSTORAGE
+
+  useEffect(() => {
+    localStorage.set('dataMobile', dataMobile); //--> Guarda la propiedad y su valor
+    localStorage.set('inputSearch', inputSearch);
+  }, [dataMobile, inputSearch]); // --> Guardamelo cuando cambie el estado de la variable.
 
   //FILTRO POR INPUT
   const handleFilterByText = (value) => {
@@ -61,6 +72,7 @@ function App() {
           element={
             <>
               <Search
+                inputSearch={inputSearch}
                 handleFilterByText={handleFilterByText}
                 PreventSubmitForm={PreventSubmitForm}
               />
