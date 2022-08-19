@@ -70,24 +70,17 @@ function Description(props) {
   }, []);
 
   const [internalMemory, setInternalMemory] = useState([]);
+  const [color, setColor] = useState([]);
+
+  //SELECTOR MEMORIA
 
   const handleSelectByMemory = (value) => {
     setInternalMemory(value);
   };
 
-  const handleChange = (ev) => {
+  const handleChangeMemory = (ev) => {
     handleSelectByMemory(ev.target.value);
   };
-
-  // const renderMemory = () => {
-  //   return mobileDescription.internalMemory.map((memory, index) => {
-  //     return (
-  //       <option value={memory} key={index}>
-  //         {memory}
-  //       </option>
-  //     );
-  //   });
-  // };
 
   const renderMemory = () => {
     if (!mobileDescription || !mobileDescription.internalMemory) {
@@ -103,13 +96,47 @@ function Description(props) {
     });
   };
 
+  //SELECTOR COLOR
+
+  const handleSelectByColor = (value) => {
+    setColor(value);
+  };
+
+  const handleChangeColor = (ev) => {
+    handleSelectByColor(ev.target.value);
+  };
+
+  const renderColor = () => {
+    if (!mobileDescription || !mobileDescription.colors) {
+      return null;
+    }
+
+    return mobileDescription.colors.map((color, index) => {
+      return (
+        <option value={color} key={index}>
+          {color}
+        </option>
+      );
+    });
+  };
+
   return (
     <>
       <form action="">
         <label htmlFor="">Almacenamiento: </label>
-        <select name="" id="" onChange={handleChange} value={internalMemory}>
+        <select
+          name=""
+          id=""
+          onChange={handleChangeMemory}
+          value={internalMemory}
+        >
           <option value="">Seleccione</option>
           {renderMemory()}
+        </select>
+        <label htmlFor="">Color: </label>
+        <select name="" id="" onChange={handleChangeColor} value={color}>
+          <option value="">Seleccione</option>
+          {renderColor()}
         </select>
       </form>
 
