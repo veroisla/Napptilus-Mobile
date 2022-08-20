@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/Search.scss';
 //PONER COMENTARIO SI HACEN BÚSQUEDA QUE NO EXISTE
 function Search(props) {
   const handleChange = (ev) => {
@@ -10,13 +11,9 @@ function Search(props) {
   return (
     <section>
       <form onSubmit={handleSubmitForm}>
-        <label htmlFor="search">Búsqueda: </label>
-        <input
-          type="text"
-          placeholder="Busca por marca o modelo"
-          onChange={handleChange}
-          value={props.inputSearch}
-        />
+        {' '}
+        <label htmlFor="search">buscar</label>
+        <input type="text" onChange={handleChange} value={props.inputSearch} />
       </form>
     </section>
   );

@@ -2,19 +2,49 @@
 @import "../../styles/Core/Vars.scss";
 
 .header {
-   padding-bottom: 18px;
-   width: 100wh;
-   margin-bottom: 4rem;
-
+ 
     &__logo {
         width: 5rem;
         margin: 1rem;
         &:hover {
         background-color: $--color-ligth-pink;    
         }
-        
     }
 
+
+&__title {
+        font-family: 'Milliard', sans-serif;
+        font-size: 6rem;
+        font-weight: 900;
+        line-height: 1.33;
+        color: #1E1F21;
+        position: relative;
+        margin: 0;
+        display: none;
+    &::after {
+        content: '';
+        position: absolute;
+        background: #FFDB6B;
+        height: 1rem;
+        width: 40%;
+        top: 100%;
+        left: 0;
+        transform: translate(-50%, -55%);
+        z-index: 0;
+    }}
+}
+   
+
+
+
+
+
+
+
+
+
+
+    
 //  &__title{
 //         color: mix(#fff, #e91e63, 85%);
 // 	font-size: 6rem;  
@@ -29,26 +59,3 @@
 // 		0.03em 0.03em 0 mix(#fff, #e91e63, 70%),
 // 		0.035em 0.035em 0 mix(#fff, #e91e63, 72%);
 //     }
-
-&__title {
-        font-family: 'Milliard', sans-serif;
-        font-size: 6rem;
-        font-weight: 900;
-        line-height: 1.33;
-        color: #1E1F21;
-        position: relative;
-        margin: 0;
-    &::after {
-        content: '';
-        position: absolute;
-        background: #FFDB6B;
-        height: 1rem;
-        width: 40%;
-        top: 100%;
-        left: 0;
-        transform: translate(-50%, -55%);
-        z-index: 0;
-    }}
-}
-   
-    

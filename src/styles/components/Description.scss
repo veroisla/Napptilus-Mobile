@@ -1,32 +1,103 @@
 @import "../../styles/Core/Reset.scss";
 @import "../../styles/Core/Vars.scss";
 
-.btn--añadir {
-    background: $--color-black;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 10px var(--spacing-03);
-    text-align: center;
-    color: $--color-white;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    font-stretch:condensed;
-    padding: 5px 30px 5px 30px;
+
+.description {
+   margin: 35px;
+
+   &__img {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+   }
+
+   //DESCRIPTION
+
+   &__description {
+      display: flex;
+      flex-direction: column;
+      line-height: 35px;
+      margin-bottom: 20px;
+   }
+
+   &__modelAndPrice {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+   }
+
+   &__model {
+      text-transform: uppercase;
+      font-weight: 700;
+   }  
+
+   &__line {
+      border-bottom: 1px solid $--color-black;
+      padding:15px 0px 15px 0px;
+   }
+   
+   &__detail {
+      width: 100%;
+   }
+
+   &__camara {
+      padding-top: 20px;
+   }
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   //BTN ADD TO CART
+
+    &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__add {
+     font-size: 12px;
+     font-weight: 600;
+     text-align: center; 
+     letter-spacing: 0.7px;
+     text-transform: uppercase; 
+     font-stretch:condensed;
+     background: $--color-black;
+     color: $--color-white;
+     padding: 10px 80px 10px 80px;
+     width: fit-content;
+     border: none;
+     cursor: pointer;
+     margin: 20px 0 30px 0px;
+   
+     &:hover {
+        background-color: $--color-pink;
+     }}
+    }
 }
 
 
 //BTN BACK TO HOME
-.cta {
+.description__btn__home {
     border: none;
     background: none;
-    margin: 3rem;
     display: flex;
     align-items: center;
-  
+    margin-bottom: 30px;
+    
    }
    
-   .cta span {
+   .description__btn__home span {
     padding: 7px 0 7px 5px;
     letter-spacing: 4px;
     font-size: 10px;
@@ -35,7 +106,7 @@
 
    }
    
-   .cta svg {
+   .description__btn__home svg {
     transform: translateX(8px);
     transition: all 0.3s ease;
     margin-right: 10px;
@@ -46,11 +117,11 @@
     margin-right: 30px;
    }
    
-   .cta:hover svg {
+   .description__btn__home:hover svg {
     transform: translateX(0);
    }
    
-   .cta:active svg {
+   .description__btn__home:active svg {
     transform: scale(0.9);
    }
    
@@ -73,7 +144,7 @@
     transition: transform 0.25s ease-out;
    }
    
-   .cta:hover .hover-underline-animation:after {
+   .description__btn__home:hover .hover-underline-animation:after {
     transform: scaleX(1);
     transform-origin: bottom right;
    }
