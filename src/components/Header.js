@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 // import { Breadcrumbs, Link } from '@material-ui/core';
 
 import '../styles/components/Header.scss';
-import logo from '../images/logo.png';
-import logo_Apple from '../images/logo_Apple.png';
+import logo from '../images/logo.white.PNG';
+// import logo_Apple from '../images/logo_Apple.png';
 
 function Header() {
   return (
@@ -16,13 +16,15 @@ function Header() {
       <Link to={'/'}>
         {' '}
         <img
-          src={logo_Apple}
+          src={logo}
           alt="Logo Napptilus"
           title="Página principal"
           className="header__logo"
         />
       </Link>
-      <h1>Napptilus</h1>
+      <div>
+        <h1 className="header__title">Napptilus</h1>
+      </div>
     </header>
   );
 }

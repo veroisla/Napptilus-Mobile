@@ -2,15 +2,79 @@
 @import "../../styles/Core/Vars.scss";
 
 .btn--añadir {
-    font-size: 1.625rem;
-    color: #fff;
-    text-align: left;
-    background: #FF8F83;
-    padding: 1.25rem 1rem;
-    border: none;
-    border-radius: 0;
-    margin: 2rem 0 0;
-    &:hover {
-        color: $--color-black;
-    }
+    background: $--color-black;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px var(--spacing-03);
+    text-align: center;
+    color: $--color-white;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    font-stretch:condensed;
+    padding: 5px 30px 5px 30px;
 }
+
+
+//BTN BACK TO HOME
+.cta {
+    border: none;
+    background: none;
+    margin: 3rem;
+    display: flex;
+    align-items: center;
+  
+   }
+   
+   .cta span {
+    padding: 7px 0 7px 5px;
+    letter-spacing: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+
+   }
+   
+   .cta svg {
+    transform: translateX(8px);
+    transition: all 0.3s ease;
+    margin-right: 10px;
+  
+   }
+
+   .btn_backToHome__svg {
+    margin-right: 30px;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active svg {
+    transform: scale(0.9);
+   }
+   
+   .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+   }
+   
+   .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+   }
+   
+   .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+   }
+

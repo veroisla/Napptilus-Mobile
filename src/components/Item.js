@@ -14,6 +14,7 @@ function Item(props) {
           <h5>{mobile.model}</h5>
           <p>{mobile.price}</p>
           <p>{mobile.ram}</p>
+          <button className="btn__showMore">Ver más</button>
         </li>
       </Link>
     );
