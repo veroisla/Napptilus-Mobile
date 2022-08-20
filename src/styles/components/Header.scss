@@ -2,7 +2,14 @@
 @import "../../styles/Core/Vars.scss";
 
 .header {
- 
+    box-shadow: 0px 2px 6px $--color-light-grey; 
+
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__logo {
         width: 5rem;
         margin: 1rem;
@@ -11,6 +18,12 @@
         }
     }
 
+    &__cart {
+        font-size: 1.2rem;
+       margin-right: 1.5rem;
+    }
+
+ 
 
 &__title {
         font-family: 'Milliard', sans-serif;
