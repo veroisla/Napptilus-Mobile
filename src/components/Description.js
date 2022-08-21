@@ -157,7 +157,10 @@ function Description(props) {
                 </p>
                 <p>CPU: {mobileDescription.cpu}</p>
               </div>
+
+              {/* SELECTORES */}
               <form action="" className="description__form">
+                {/* Almacenamiento */}
                 <label htmlFor="">Almacenamiento: </label>
                 <select
                   name="storageCode"
@@ -174,10 +177,10 @@ function Description(props) {
                   </option>
                   {renderMemory()}
                 </select>
+                {/* Color */}
                 <label htmlFor="" className="description__form__color">
                   Color:{' '}
                 </label>
-
                 <select
                   name="colorCode"
                   id=""

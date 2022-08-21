@@ -35,22 +35,23 @@
         align-items: center;
         margin: 60px 20px 0 20px;   
         text-transform: uppercase;
+        line-height: 18px; 
+        letter-spacing: 1px;
 
         &__mobile {
             font-size: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         &__search {
             font-size: 13px;
-            line-height: 18px;   
             margin-bottom: 10px;
             font-weight: bold;
         }
 
         &__result {
             font-size: 11px;
-            line-height: 18px;
+            
             text-align: center;
         }
     }
