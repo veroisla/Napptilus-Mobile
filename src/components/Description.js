@@ -154,8 +154,8 @@ function Description(props) {
                   name="storageCode"
                   id=""
                   onChange={handleChangeMemory}
-                  Defaultvalue={
-                    internalMemory.length <= 1
+                  defaultvalue={
+                    internalMemory.length === 1
                       ? internalMemory[0]
                       : internalMemory
                   }
