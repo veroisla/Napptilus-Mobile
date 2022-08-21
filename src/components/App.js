@@ -8,6 +8,7 @@ import HeaderDescription from './HeaderDescription';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from '../components/Description';
+import BreadCrumbs from '../components/BreadCrumbs';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';

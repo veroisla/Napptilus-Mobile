@@ -1,7 +1,21 @@
-import React from 'react';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
 
-function BreadCrumbs() {
-  return <div>BreadCrumbs</div>;
-}
+// function BreadCrumbs(props) {
+//   return (
+//     <Routes>
+//        </Routes>
+//     <nav>
+//       <ul>
+//         <li>
+//           <Link path="/"></Link>
+//         </li>
+//         <li></li>
+//         <li></li>
+//       </ul>
+//     </nav>
 
-export default BreadCrumbs;
+//   );
+// }
+
+// export default BreadCrumbs;

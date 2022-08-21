@@ -45,7 +45,7 @@ function Description(props) {
     });
   };
 
-  //-------> SELECTOR COLOR
+  // -------> SELECTOR COLOR
 
   const handleSelectByColor = (value) => {
     setColor(value);
@@ -62,7 +62,7 @@ function Description(props) {
 
     return mobileDescription.colors.map((color, index) => {
       return (
-        <option value={color} key={index}>
+        <option value={color.id} key={index}>
           {color}
         </option>
       );
@@ -154,7 +154,11 @@ function Description(props) {
                   name="storageCode"
                   id=""
                   onChange={handleChangeMemory}
-                  value={internalMemory}
+                  Defaultvalue={
+                    internalMemory.length <= 1
+                      ? internalMemory[0]
+                      : internalMemory
+                  }
                 >
                   <option value="" disabled>
                     Seleccione
@@ -164,11 +168,12 @@ function Description(props) {
                 <label htmlFor="" className="description__form__color">
                   Color:{' '}
                 </label>
+
                 <select
                   name="colorCode"
                   id=""
                   onChange={handleChangeColor}
-                  value={color}
+                  defaultValue={color.length <= 1 ? color[0] : color}
                 >
                   <option value="" disabled>
                     Seleccione
