@@ -11,7 +11,6 @@ import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
-import { Breadcrumbs } from '@material-ui/core';
 
 function App() {
   const [dataMobile, setDataMobile] = useState(
@@ -77,7 +76,7 @@ function App() {
                 handleFilterByText={handleFilterByText}
                 PreventSubmitForm={PreventSubmitForm}
               />
-              <Item dataMobile={results} />
+              <Item dataMobile={results} inputSearch={inputSearch} />
             </>
           }
         />
