@@ -30,7 +30,11 @@ function Item(props) {
                 <strong>{mobile.brand}</strong> -{' '}
                 <strong>{mobile.model}</strong>
               </p>
-              <p className="item__price">{mobile.price}€</p>
+              {mobile.price === '' ? (
+                'Sin datos €'
+              ) : (
+                <p className="item__price">{mobile.price}€</p>
+              )}
             </div>
           </li>
         </Link>

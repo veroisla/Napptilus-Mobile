@@ -100,19 +100,28 @@ function Description(props) {
                 <p className="description__model">
                   {mobileDescription.brand} - {mobileDescription.model}
                 </p>
-                <p>{mobileDescription.price} EUR</p>
+                {mobileDescription.price === '' ? (
+                  ''
+                ) : (
+                  <p>{mobileDescription.price} EUR</p>
+                )}
               </div>
               <div className="description__line">
                 <p>
                   <strong className="description__detail">Dimensiones:</strong>
                 </p>
                 <p>{mobileDescription.dimentions}</p>
-                <div>
-                  <p>
-                    <strong> Peso:</strong>
-                  </p>
-                  <p>{mobileDescription.weight} g</p>
-                </div>
+
+                {mobileDescription.weight === '' ? (
+                  ''
+                ) : (
+                  <div>
+                    <p>
+                      <strong> Peso:</strong>
+                    </p>
+                    <p>{mobileDescription.weight} g</p>{' '}
+                  </div>
+                )}
               </div>
               <div className="description__line">
                 <p>
