@@ -11,13 +11,25 @@ function Search(props) {
     props.PreventSubmitForm();
   };
   return (
-    <section>
-      <form onSubmit={handleSubmitForm}>
-        {' '}
-        <label htmlFor="search">
-          <CgSearch /> buscar
-        </label>
-        <input type="text" onChange={handleChange} value={props.inputSearch} />
+    // <section className="search">
+    //   <form onSubmit={handleSubmitForm}>
+    //     {' '}
+    //     <label htmlFor="search">
+    //       <CgSearch /> buscar
+    //     </label>
+    //     <input type="text" onChange={handleChange} value={props.inputSearch} />
+    //   </form>
+    // </section>
+    <section className="search">
+      {' '}
+      <form onSubmit={handleSubmitForm} class="search__container">
+        <input
+          class="search__input"
+          type="text"
+          placeholder="Buscar"
+          onChange={handleChange}
+          value={props.inputSearch}
+        />
       </form>
     </section>
   );
