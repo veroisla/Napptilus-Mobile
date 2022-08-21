@@ -8,19 +8,24 @@ function Item(props) {
   const mobileElement = props.dataMobile.map((mobile, index) => {
     return (
       <Link to={`/api/product/${mobile.id}`}>
-        <li key={index} className="item__mobile">
-          <Image mobile={mobile} />
-          <h4>{mobile.brand}</h4>
-          <h5>{mobile.model}</h5>
-          <p>{mobile.price}</p>
-          <p>{mobile.ram}</p>
-          <button className="btn__showMore">Ver más</button>
+        <li key={index} className="item__mobileContainer">
+          <div className="item__img">
+            <Image mobile={mobile} />
+          </div>
+          <div className="item__desc">
+            <p className="item__brandAndModel">
+              <strong>{mobile.brand}</strong> - <strong>{mobile.model}</strong>
+            </p>
+            <p className="item__price">{mobile.price}€</p>
+          </div>
+
+          {/* <button className="btn__showMore">Ver más</button> */}
         </li>
       </Link>
     );
   });
   return (
-    <section className="item__section">
+    <section className="item">
       <ul className="item__list">{mobileElement}</ul>
     </section>
   );
