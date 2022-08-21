@@ -19,7 +19,7 @@ function Description(props) {
   useEffect(() => {
     // localStorage.set('mobileDescription', params);
     getDescMobile(params.id, setmobileDescription);
-  }, []);
+  }, [params.id]);
 
   //------> SELECTOR MEMORIA
 

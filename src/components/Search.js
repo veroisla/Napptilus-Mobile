@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/components/Search.scss';
+import { CgSearch } from 'react-icons/cg';
+
 //PONER COMENTARIO SI HACEN BÚSQUEDA QUE NO EXISTE
 function Search(props) {
   const handleChange = (ev) => {
@@ -12,7 +14,9 @@ function Search(props) {
     <section>
       <form onSubmit={handleSubmitForm}>
         {' '}
-        <label htmlFor="search">buscar</label>
+        <label htmlFor="search">
+          <CgSearch /> buscar
+        </label>
         <input type="text" onChange={handleChange} value={props.inputSearch} />
       </form>
     </section>

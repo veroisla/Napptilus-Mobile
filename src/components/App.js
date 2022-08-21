@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
 
-import Header from '../components/Header';
+import HeaderHome from '../components/HeaderHome';
+import HeaderDescription from './HeaderDescription';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from '../components/Description';
@@ -65,12 +66,12 @@ function App() {
 
   return (
     <>
-      <Header /> <Breadcrumbs />
       <Routes>
         <Route
           path="/"
           element={
             <>
+              <HeaderHome />
               <Search
                 inputSearch={inputSearch}
                 handleFilterByText={handleFilterByText}
@@ -82,7 +83,12 @@ function App() {
         />
         <Route
           path="/api/product/:id"
-          element={<Description mobile={mobileFound} />}
+          element={
+            <>
+              <HeaderDescription />
+              <Description mobile={mobileFound} />
+            </>
+          }
         />
       </Routes>
     </>

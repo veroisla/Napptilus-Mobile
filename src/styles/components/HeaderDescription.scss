@@ -1,0 +1,11 @@
+@import "../../styles/Core/Reset.scss";
+@import "../../styles/Core/Vars.scss";
+
+.header {
+
+    @media all and (min-width:768px) {
+        &__cart__desc {
+            margin-right: 40px;
+        }
+    }
+}
