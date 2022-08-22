@@ -4,7 +4,7 @@ function Image(props) {
   return (
     <img
       src={props.mobile.imgUrl}
-      alt="Imagen móvil"
+      alt={props.mobile.model}
       title={props.mobile.model}
     />
   );

@@ -8,7 +8,6 @@ import HeaderDescription from './HeaderDescription';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from '../components/Description';
-import BreadCrumbs from '../components/BreadCrumbs';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
@@ -37,6 +36,9 @@ function App() {
   useEffect(() => {
     localStorage.set('dataMobile', dataMobile); //--> Guarda la propiedad y su valor
     localStorage.set('inputSearch', inputSearch);
+    setTimeout(function () {
+      localStorage.clear();
+    }, 3600 * 1000);
   }, [dataMobile, inputSearch]); // --> Guardamelo cuando cambie el estado de la variable.
 
   //FILTRO POR INPUT

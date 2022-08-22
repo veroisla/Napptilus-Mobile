@@ -6,6 +6,7 @@ import Image from '../components/Image';
 import { ImMobile2 } from 'react-icons/im';
 
 function Item(props) {
+  console.log('setTimeout() Ejemplo...');
   if (props.dataMobile.length === 0) {
     return (
       <div className="item__dontExist">
