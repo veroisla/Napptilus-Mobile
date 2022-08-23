@@ -6,7 +6,7 @@ import '../styles/components/HeaderDescription.scss';
 
 function HeaderDescription() {
   return (
-    <header className="header">
+    <header className="header header__desc">
       <Link to={'/'}>
         <img
           src={logo}
@@ -15,7 +15,7 @@ function HeaderDescription() {
           className="header__logo"
         />
       </Link>
-      <div className="header__cart header__cart__desc">
+      <div className=" header__cart__desc">
         <BsBag />
       </div>
     </header>
