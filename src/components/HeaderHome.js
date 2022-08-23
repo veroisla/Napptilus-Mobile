@@ -1,39 +1,3 @@
-// import { React, useState } from 'react';
-// import { Link } from 'react-router-dom';
-
-// import '../styles/components/HeaderHome.scss';
-// import logo from '../images/logo.white.PNG';
-// import Hamburguer from '../images/icon-hamburger.svg';
-// import { BsBag } from 'react-icons/bs';
-
-// function Header() {
-//   const [sidebar, setSidebar] = useState(false);
-
-//   const showSideBar = () => setSidebar(!sidebar);
-//   return (
-//     <header className="header">
-//       <Link to={'/'}>
-//         <img
-//           src={logo}
-//           alt="Logo Napptilus"
-//           title="Página principal"
-//           className="header__logo"
-//         />
-//       </Link>
-//       <nav className="header__links">
-//         <p className="header__links__item">Iniciar sesión</p>
-//         <p className="header__links__item">Ayuda</p>{' '}
-//         <div className="header__cart">
-//           <BsBag />
-//         </div>
-//       </nav>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Header;
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -52,7 +16,12 @@ function Header() {
     <header className="header">
       <div className="header__LogoAndNav">
         <Link to={'/'}>
-          <img src={Logo} alt="Logo Web" className="header__Logo" />
+          <img
+            src={Logo}
+            alt="Logo Napptilus"
+            className="header__Logo"
+            title="Página principal"
+          />
         </Link>
         {/* NAV DESKTOP */}
         <nav className="navDesktop">
