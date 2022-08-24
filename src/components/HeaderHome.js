@@ -27,12 +27,12 @@ function Header() {
         <nav className="navDesktop">
           <ul className="navDesktop__list">
             <li>
-              <a className="navDesktop__items" href="#About">
+              <a className="navDesktop__items" href="#">
                 Iniciar sesión
               </a>
             </li>
             <li>
-              <a className="navDesktop__items" href="#Services">
+              <a className="navDesktop__items" href="#">
                 Ayuda
               </a>
             </li>
