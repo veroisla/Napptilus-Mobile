@@ -17,7 +17,6 @@ function Description(props) {
 
   const params = useParams();
   useEffect(() => {
-    // localStorage.set('mobileDescription', params);
     getDescMobile(params.id, setmobileDescription);
   }, [params.id]);
 
@@ -44,8 +43,6 @@ function Description(props) {
       );
     });
   };
-
-  // -------> SELECTOR COLOR
 
   const handleSelectByColor = (value) => {
     setColor(value);

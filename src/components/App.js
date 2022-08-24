@@ -21,7 +21,6 @@ function App() {
     localStorage.get('inputSearch', '')
   );
 
-  // ITEM LIST
   useEffect(() => {
     if (dataMobile.length === 0) {
       getApiData().then((dataFromApi) => {
@@ -31,17 +30,14 @@ function App() {
     console.log(dataMobile);
   }, []);
 
-  //LOCALSTORAGE
-
   useEffect(() => {
-    localStorage.set('dataMobile', dataMobile); //--> Guarda la propiedad y su valor
+    localStorage.set('dataMobile', dataMobile);
     localStorage.set('inputSearch', inputSearch);
     setTimeout(function () {
       localStorage.clear();
     }, 3600 * 1000);
-  }, [dataMobile, inputSearch]); // --> Guardamelo cuando cambie el estado de la variable.
+  }, [dataMobile, inputSearch]);
 
-  //FILTRO POR INPUT
   const handleFilterByText = (value) => {
     setInputSearch(value);
   };
@@ -53,12 +49,10 @@ function App() {
     );
   });
 
-  //PREVENIR ENVÍO POR DEFECTO DEL FORMUALRIO
   const PreventSubmitForm = (ev) => {
     ev.preventDefault();
   };
 
-  //OBTENER ID DE LA URL
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
 

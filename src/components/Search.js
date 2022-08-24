@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/components/Search.scss';
 
-//PONER COMENTARIO SI HACEN BÚSQUEDA QUE NO EXISTE
 function Search(props) {
   const handleChange = (ev) => {
     props.handleFilterByText(ev.target.value);
