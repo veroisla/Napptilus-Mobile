@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 import '../styles/components/HeaderHome.scss';
 
-import Logo from '../images/logo.white.PNG';
 import { FiMenu } from 'react-icons/fi';
 import { BsBag } from 'react-icons/bs';
 
@@ -13,16 +12,9 @@ function Header() {
   const showSideBar = () => setSidebar(!sidebar);
 
   return (
-    <header className="header">
+    <header className="header" id="home">
       <div className="header__LogoAndNav">
-        <Link to={'/'}>
-          <img
-            src={Logo}
-            alt="Logo Napptilus"
-            className="header__Logo"
-            title="Página principal"
-          />
-        </Link>
+        <Logo />
         {/* NAV DESKTOP */}
         <nav className="navDesktop">
           <ul className="navDesktop__list">

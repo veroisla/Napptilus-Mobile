@@ -27,7 +27,6 @@ function App() {
         setDataMobile(dataFromApi);
       });
     }
-    console.log(dataMobile);
   }, []);
 
   useEffect(() => {
@@ -58,7 +57,6 @@ function App() {
 
   const mobileId = dataPath !== null ? dataPath.params.id : null;
   const mobileFound = dataMobile.find((item) => item.id === mobileId);
-  console.log(mobileFound);
 
   return (
     <>
@@ -73,6 +71,7 @@ function App() {
                 handleFilterByText={handleFilterByText}
                 PreventSubmitForm={PreventSubmitForm}
               />
+
               <Item dataMobile={results} inputSearch={inputSearch} />
             </>
           }

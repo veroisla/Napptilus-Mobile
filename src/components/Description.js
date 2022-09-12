@@ -1,13 +1,14 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import { getDescMobile } from '../services/descriptionProduct';
+import Selector from '../components/Selector';
 
 import Image from '../components/Image';
-import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+
 import '../styles/components/Description.scss';
+import BackToHome from './BackToHome';
 
 function Description(props) {
   const [mobileDescription, setmobileDescription] = useState(null);
@@ -69,14 +70,7 @@ function Description(props) {
   return (
     <>
       <section className="description">
-        <Link to="/">
-          <button type="text" class="description__btn__home">
-            <HiOutlineArrowNarrowLeft />
-            <span class="description__btn__underline hover-underline-animation">
-              Back to home
-            </span>
-          </button>
-        </Link>
+        <BackToHome />
         {mobileDescription != null ? (
           <article className="description__descAndImg">
             {/* IMG */}
@@ -152,59 +146,19 @@ function Description(props) {
                   <p>CPU: {mobileDescription.cpu}</p>
                 </div>
               </div>
-              {/* SELECTORES */}
-              <form action="" className="description__form">
-                {/* Almacenamiento */}
-                <label htmlFor="">Almacenamiento: </label>
-                <select
-                  name="storageCode"
-                  id=""
-                  onChange={handleChangeMemory}
-                  defaultvalue={
-                    internalMemory.length === 1
-                      ? internalMemory[0]
-                      : internalMemory
-                  }
-                >
-                  <option value="" disabled>
-                    Seleccione
-                  </option>
-                  {renderMemory()}
-                </select>
-                {/* Color */}
-                <label htmlFor="" className="description__form__color">
-                  Color:{' '}
-                </label>
-                <select
-                  name="colorCode"
-                  id=""
-                  onChange={handleChangeColor}
-                  defaultValue={color.length <= 1 ? color[0] : color}
-                >
-                  <option value="" disabled>
-                    Seleccione
-                  </option>
-                  {renderColor()}
-                </select>
-                <button
-                  onClick={() =>
-                    console.log(
-                      mobileDescription.id,
-                      mobileDescription.colors,
-                      mobileDescription.internalMemory
-                    )
-                  }
-                  type="button"
-                  className="description__btn__add"
-                >
-                  añadir a la cesta
-                </button>
-              </form>
             </div>
           </article>
         ) : (
           'Cargando...'
-        )}
+        )}{' '}
+        <Selector
+          internalMemory={internalMemory}
+          color={color}
+          handleChangeMemory={handleChangeMemory}
+          renderMemory={renderMemory}
+          handleChangeColor={handleChangeColor}
+          renderColor={renderColor}
+        />
       </section>
     </>
   );
