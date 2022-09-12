@@ -2,13 +2,16 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getDescMobile } from '../services/descriptionProduct';
+//COMPONENTS
+import BackToHome from './BackToHome';
 import Selector from '../components/Selector';
+import AddToCartButton from './AddToCartButton';
+
+//DATA
+import { getDescMobile } from '../services/descriptionProduct';
 
 import Image from '../components/Image';
-
 import '../styles/components/Description.scss';
-import BackToHome from './BackToHome';
 
 function Description(props) {
   const [mobileDescription, setmobileDescription] = useState(null);
@@ -152,12 +155,19 @@ function Description(props) {
           'Cargando...'
         )}{' '}
         <Selector
+          label="Almacenamiento:"
+          handleChange={handleChangeMemory}
+          render={renderMemory()}
+        />
+        <Selector
+          label="Color:"
+          handleChange={handleChangeColor}
+          render={renderColor()}
+        />
+        <AddToCartButton
           internalMemory={internalMemory}
           color={color}
-          handleChangeMemory={handleChangeMemory}
-          renderMemory={renderMemory}
-          handleChangeColor={handleChangeColor}
-          renderColor={renderColor}
+          mobileDescription={mobileDescription}
         />
       </section>
     </>
