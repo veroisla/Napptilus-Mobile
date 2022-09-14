@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.white.PNG';
+import '../styles/components/Logo.scss';
 
 function Logo() {
   return (

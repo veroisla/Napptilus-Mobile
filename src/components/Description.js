@@ -148,27 +148,27 @@ function Description(props) {
                   </p>
                   <p>CPU: {mobileDescription.cpu}</p>
                 </div>
+                <Selector
+                  label="Almacenamiento:"
+                  handleChange={handleChangeMemory}
+                  render={renderMemory()}
+                />
+                <Selector
+                  label="Color:"
+                  handleChange={handleChangeColor}
+                  render={renderColor()}
+                />
+                <AddToCartButton
+                  internalMemory={internalMemory}
+                  color={color}
+                  mobileDescription={mobileDescription}
+                />
               </div>
             </div>
           </article>
         ) : (
           'Cargando...'
-        )}{' '}
-        <Selector
-          label="Almacenamiento:"
-          handleChange={handleChangeMemory}
-          render={renderMemory()}
-        />
-        <Selector
-          label="Color:"
-          handleChange={handleChangeColor}
-          render={renderColor()}
-        />
-        <AddToCartButton
-          internalMemory={internalMemory}
-          color={color}
-          mobileDescription={mobileDescription}
-        />
+        )}
       </section>
     </>
   );
