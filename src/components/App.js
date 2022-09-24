@@ -47,7 +47,8 @@ function App() {
 
   //BORRAR DE FAVORITOS
   const deleteFavourite = () => {
-    console.log('not fav');
+    favourites.splice(favourites, 1);
+    console.log('not fav', favourites);
   };
 
   //FILTRADO POR MODELO Y MARCA
