@@ -17,7 +17,3 @@ function AddToCartButton(props) {
 }
 
 export default AddToCartButton;
-// props.mobileDescription.id,
-// props.mobileDescription.colors,
-// props.mobileDescription.internalMemory,
-// props.mobileDescription.model

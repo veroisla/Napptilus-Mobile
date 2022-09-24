@@ -74,12 +74,7 @@
     
     &__LogoAndNav {
        margin:  0px 60px 0px 60px;
-    }
-
-     &__Hamburguer {
-            display: none;
-        }
-    
+    }    
         &__Creatives {
             font-weight: 900;
             font-size: 54px;
@@ -89,41 +84,7 @@
     }
  }
 
- .navDesktop {
-    display: none;
-
-    @media all and (min-width:768px) {
-
-    & {
-    display: flex;
-     }
-
-    &__list {
-         display: flex;
-         width: 450px;
-         justify-content: space-between;
-         align-items: center;
-         list-style-type: none;
-         
-         a {
-            color: $--color-black;
-            
-            &:hover {
-                border-bottom: 1px solid $--color-black;
-            }
-         }
-    }
-
-    &__items {
-        font-weight: 400;
-        line-height: 31px;
-        font-size: 18px;
-    }
-
-    }
-}
-
-
+ 
 
 
 

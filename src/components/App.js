@@ -4,14 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import { useLocation, matchPath } from 'react-router';
 
 import HeaderHome from '../components/HeaderHome';
-import HeaderDescription from './HeaderDescription';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
-import ShoppingCart from './ShoppingCart';
 
 function App() {
   const [dataMobile, setDataMobile] = useState(
@@ -82,14 +80,12 @@ function App() {
           path="/"
           element={
             <>
-              <HeaderHome />
+              <HeaderHome favourites={favourites} dataMobile={dataMobile} />
               <Search
                 inputSearch={inputSearch}
                 handleFilterByText={handleFilterByText}
                 PreventSubmitForm={PreventSubmitForm}
               />
-              <ShoppingCart favourites={favourites} dataMobile={dataMobile} />
-
               <Item dataMobile={results} inputSearch={inputSearch} />
             </>
           }
@@ -98,7 +94,7 @@ function App() {
           path="/api/product/:id"
           element={
             <>
-              <HeaderDescription />
+              <HeaderHome favourites={favourites} dataMobile={dataMobile} />
               <Description
                 mobile={mobileFound}
                 addFavourite={addFavourite}
