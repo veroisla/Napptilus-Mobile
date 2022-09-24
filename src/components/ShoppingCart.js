@@ -21,8 +21,14 @@ function ShoppingCart(props) {
 
   return (
     <div>
-      <h4>Productos comprados</h4>
-      <ul>{favouritesList}</ul>
+      {props.favourites.length === 0 ? (
+        <h4>No tienes ningún producto en la cesta</h4>
+      ) : (
+        <>
+          <h4>Productos comprados</h4>
+          <ul>{favouritesList}</ul>
+        </>
+      )}
     </div>
   );
 }
