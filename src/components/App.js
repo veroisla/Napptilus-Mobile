@@ -39,15 +39,18 @@ function App() {
   }, [dataMobile, inputSearch]);
 
   //AÑADIR A FAVORITOS
-
   const addFavourite = (id) => {
     const favList = favourites.concat([id]);
     setFavourites(favList);
-    console.log('list favourites', favourites);
+    console.log('list favourites', favList);
+  };
+
+  //BORRAR DE FAVORITOS
+  const deleteFavourite = () => {
+    console.log('not fav');
   };
 
   //FILTRADO POR MODELO Y MARCA
-
   const handleFilterByText = (value) => {
     setInputSearch(value);
   };
@@ -60,13 +63,11 @@ function App() {
   });
 
   //PREVENIR ENVÍO POR DEFECTO DEL FORM
-
   const PreventSubmitForm = (ev) => {
     ev.preventDefault();
   };
 
   //DETALLE DE CADA MÓVIL
-
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
 
@@ -80,7 +81,11 @@ function App() {
           path="/"
           element={
             <>
-              <HeaderHome favourites={favourites} dataMobile={dataMobile} />
+              <HeaderHome
+                favourites={favourites}
+                dataMobile={dataMobile}
+                deleteFavourite={deleteFavourite}
+              />
               <Search
                 inputSearch={inputSearch}
                 handleFilterByText={handleFilterByText}
@@ -94,7 +99,11 @@ function App() {
           path="/api/product/:id"
           element={
             <>
-              <HeaderHome favourites={favourites} dataMobile={dataMobile} />
+              <HeaderHome
+                favourites={favourites}
+                dataMobile={dataMobile}
+                deleteFavourite={deleteFavourite}
+              />
               <Description
                 mobile={mobileFound}
                 addFavourite={addFavourite}

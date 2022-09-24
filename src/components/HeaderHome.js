@@ -25,6 +25,7 @@ function Header(props) {
           <ShoppingCart
             favourites={props.favourites}
             dataMobile={props.dataMobile}
+            deleteFavourite={props.deleteFavourite}
           />
         </div>
       </nav>
