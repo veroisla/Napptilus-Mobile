@@ -26,6 +26,7 @@ function Header(props) {
             favourites={props.favourites}
             dataMobile={props.dataMobile}
             deleteFavourite={props.deleteFavourite}
+            deleteAllFavourites={props.deleteAllFavourites}
           />
         </div>
       </nav>

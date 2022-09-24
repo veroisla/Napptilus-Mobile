@@ -6,6 +6,10 @@ function ShoppingCart(props) {
   const handleReset = (ev) => {
     props.deleteFavourite();
   };
+
+  const handleResetListFav = () => {
+    props.deleteAllFavourites();
+  };
   const favouritesList = props.favourites.map((fav, index) => {
     return (
       <section>
@@ -27,6 +31,7 @@ function ShoppingCart(props) {
         <>
           <h4>Productos comprados</h4>
           <ul>{favouritesList}</ul>
+          <button onClick={handleResetListFav}>Borrar todo</button>
         </>
       )}
     </div>

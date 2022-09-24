@@ -33,10 +33,9 @@ function App() {
   useEffect(() => {
     localStorage.set('dataMobile', dataMobile);
     localStorage.set('inputSearch', inputSearch);
-    setTimeout(function () {
-      localStorage.clear();
-    }, 3600 * 1000);
   }, [dataMobile, inputSearch]);
+
+  // ------ CESTA DE LA COMPRA   ------
 
   //AÑADIR A FAVORITOS
   const addFavourite = (id) => {
@@ -45,13 +44,18 @@ function App() {
     console.log('list favourites', favList);
   };
 
-  //BORRAR DE FAVORITOS
+  //BORRAR MOVIL DE FAVORITOS
   const deleteFavourite = () => {
     favourites.splice(favourites, 1);
     console.log('not fav', favourites);
   };
 
-  //FILTRADO POR MODELO Y MARCA
+  //BORRAR TODOS LOS ELEMENTOS DE FAVORITOS
+  const deleteAllFavourites = () => {
+    console.log('borrar todo');
+  };
+
+  //------------ FILTRADO POR MODELO Y MARCA
   const handleFilterByText = (value) => {
     setInputSearch(value);
   };
@@ -63,12 +67,12 @@ function App() {
     );
   });
 
-  //PREVENIR ENVÍO POR DEFECTO DEL FORM
+  //----------PREVENIR ENVÍO POR DEFECTO DEL FORM
   const PreventSubmitForm = (ev) => {
     ev.preventDefault();
   };
 
-  //DETALLE DE CADA MÓVIL
+  //--------- DETALLE DE CADA MÓVIL
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
 
@@ -86,6 +90,7 @@ function App() {
                 favourites={favourites}
                 dataMobile={dataMobile}
                 deleteFavourite={deleteFavourite}
+                deleteAllFavourites={deleteAllFavourites}
               />
               <Search
                 inputSearch={inputSearch}
@@ -104,6 +109,7 @@ function App() {
                 favourites={favourites}
                 dataMobile={dataMobile}
                 deleteFavourite={deleteFavourite}
+                deleteAllFavourites={deleteAllFavourites}
               />
               <Description
                 mobile={mobileFound}
