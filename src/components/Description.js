@@ -15,7 +15,7 @@ import '../styles/components/Description.scss';
 
 function Description(props) {
   const [mobileDescription, setmobileDescription] = useState(null);
-  console.log(mobileDescription);
+  // console.log(mobileDescription);
   const [internalMemory, setInternalMemory] = useState([]);
   const [color, setColor] = useState([]);
 
@@ -162,6 +162,8 @@ function Description(props) {
                   internalMemory={internalMemory}
                   color={color}
                   mobileDescription={mobileDescription}
+                  addFavourite={props.addFavourite}
+                  dataMobile={props.dataMobile}
                 />
               </div>
             </div>

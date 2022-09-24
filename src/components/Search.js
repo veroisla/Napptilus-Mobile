@@ -11,9 +11,9 @@ function Search(props) {
 
   return (
     <section className="search">
-      <form onSubmit={handleSubmitForm} class="search__container">
+      <form onSubmit={handleSubmitForm} className="search__container">
         <input
-          class="search__input"
+          className="search__input"
           type="text"
           placeholder="Buscar"
           onChange={handleChange}

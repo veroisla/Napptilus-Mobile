@@ -11,6 +11,7 @@ import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
+import ShoppingCart from './ShoppingCart';
 
 function App() {
   const [dataMobile, setDataMobile] = useState(
@@ -20,6 +21,8 @@ function App() {
   const [inputSearch, setInputSearch] = useState(
     localStorage.get('inputSearch', '')
   );
+
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     if (dataMobile.length === 0) {
@@ -37,6 +40,16 @@ function App() {
     }, 3600 * 1000);
   }, [dataMobile, inputSearch]);
 
+  //AÑADIR A FAVORITOS
+
+  const addFavourite = (id) => {
+    const favList = favourites.concat([id]);
+    setFavourites(favList);
+    console.log('list favourites', favourites);
+  };
+
+  //FILTRADO POR MODELO Y MARCA
+
   const handleFilterByText = (value) => {
     setInputSearch(value);
   };
@@ -48,9 +61,13 @@ function App() {
     );
   });
 
+  //PREVENIR ENVÍO POR DEFECTO DEL FORM
+
   const PreventSubmitForm = (ev) => {
     ev.preventDefault();
   };
+
+  //DETALLE DE CADA MÓVIL
 
   const { pathname } = useLocation();
   const dataPath = matchPath('/api/product/:id', pathname);
@@ -71,6 +88,7 @@ function App() {
                 handleFilterByText={handleFilterByText}
                 PreventSubmitForm={PreventSubmitForm}
               />
+              <ShoppingCart favourites={favourites} dataMobile={dataMobile} />
 
               <Item dataMobile={results} inputSearch={inputSearch} />
             </>
@@ -81,7 +99,11 @@ function App() {
           element={
             <>
               <HeaderDescription />
-              <Description mobile={mobileFound} />
+              <Description
+                mobile={mobileFound}
+                addFavourite={addFavourite}
+                dataMobile={dataMobile}
+              />
             </>
           }
         />
