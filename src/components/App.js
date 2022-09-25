@@ -10,6 +10,7 @@ import Description from '../components/Description';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
+import ShoppingCart from './ShoppingCart';
 
 function App() {
   const [dataMobile, setDataMobile] = useState(
@@ -46,6 +47,8 @@ function App() {
   //BORRAR MOVIL DE FAVORITOS
   const deleteFavourite = () => {
     favourites.splice(favourites, 1);
+
+    console.log('fav', favourites);
   };
 
   //------------ FILTRADO POR MODELO Y MARCA
@@ -106,6 +109,23 @@ function App() {
                 mobile={mobileFound}
                 addFavourite={addFavourite}
                 dataMobile={dataMobile}
+              />
+            </>
+          }
+        />
+        <Route
+          path="/api/product/shoppingCart"
+          element={
+            <>
+              <HeaderHome
+                favourites={favourites}
+                dataMobile={dataMobile}
+                deleteFavourite={deleteFavourite}
+              />
+              <ShoppingCart
+                favourites={favourites}
+                dataMobile={dataMobile}
+                deleteFavourite={deleteFavourite}
               />
             </>
           }
