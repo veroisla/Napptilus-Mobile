@@ -2,7 +2,7 @@
 @import "../../styles/Core/Vars.scss";
 
 .cart {
-    &__list {
+    &__item {
     display: flex; 
     flex-direction:row;
     min-height: 325px;
@@ -12,7 +12,7 @@
 }
 
 &__title {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     padding: 20px 0px 30px 30px;
     text-transform: uppercase;
@@ -48,5 +48,22 @@
     cursor: pointer;
     margin-bottom: 30px;
     
+    &:hover {
+        text-decoration: underline
+    }
 }
+}
+
+@media all and (min-width: 768px) {
+    .cart {
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            margin-right: 80px;
+        }
+    }
 }

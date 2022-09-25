@@ -10,7 +10,7 @@ function ShoppingCart(props) {
   const favouritesList = props.favourites.map((fav, index) => {
     return (
       <section className="cart">
-        <li key={index} className="cart__list">
+        <li key={index} className="cart__item">
           <div>
             <div className="cart__modelAndbrand">
               <p className="cart__brand">{fav.brand}</p> -
@@ -38,7 +38,9 @@ function ShoppingCart(props) {
           <h4 className="cart__title">Cesta ({props.favourites.length})</h4>
           <hr />
 
-          <ul key={props.index}>{favouritesList}</ul>
+          <ul className="cart__list" key={props.index}>
+            {favouritesList}
+          </ul>
         </>
       )}
     </div>
