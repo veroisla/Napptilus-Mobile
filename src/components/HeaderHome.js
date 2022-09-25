@@ -16,17 +16,16 @@ function Header(props) {
         <Logo />
         <BsBag
           alt="Nav Menu Header"
-          className="header__Hamburguer"
+          className="header__Cart"
           onClick={showSideBar}
         />
       </div>
       <nav className={sidebar ? 'nav__menu--open' : 'nav__menu--notOpen'}>
-        <div className="nav__container nav__list" onClick={showSideBar}>
+        <div className="nav__container" onClick={showSideBar}>
           <ShoppingCart
             favourites={props.favourites}
             dataMobile={props.dataMobile}
             deleteFavourite={props.deleteFavourite}
-            deleteAllFavourites={props.deleteAllFavourites}
           />
         </div>
       </nav>

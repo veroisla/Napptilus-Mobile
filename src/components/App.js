@@ -41,18 +41,11 @@ function App() {
   const addFavourite = (id) => {
     const favList = favourites.concat([id]);
     setFavourites(favList);
-    console.log('list favourites', favList);
   };
 
   //BORRAR MOVIL DE FAVORITOS
   const deleteFavourite = () => {
     favourites.splice(favourites, 1);
-    console.log('not fav', favourites);
-  };
-
-  //BORRAR TODOS LOS ELEMENTOS DE FAVORITOS
-  const deleteAllFavourites = () => {
-    console.log('borrar todo');
   };
 
   //------------ FILTRADO POR MODELO Y MARCA
@@ -90,7 +83,6 @@ function App() {
                 favourites={favourites}
                 dataMobile={dataMobile}
                 deleteFavourite={deleteFavourite}
-                deleteAllFavourites={deleteAllFavourites}
               />
               <Search
                 inputSearch={inputSearch}
@@ -109,7 +101,6 @@ function App() {
                 favourites={favourites}
                 dataMobile={dataMobile}
                 deleteFavourite={deleteFavourite}
-                deleteAllFavourites={deleteAllFavourites}
               />
               <Description
                 mobile={mobileFound}

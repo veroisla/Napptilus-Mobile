@@ -14,8 +14,8 @@
         justify-content: space-between;
     }
 
-    &__Hamburguer {
-        font-size: 30px;
+    &__Cart {
+        font-size: 20px;
         color: $--color-black;
         margin-right: 20px;
     }
@@ -38,12 +38,12 @@
 
  &__container {
     position: absolute;
-    width: 90%;
+    width: 100%;
     z-index: 10;
-   background-color: $--color-white;
-   border: 1px solid $--color-grey;
-    right: 0;
-    margin-right: 20px;
+    background-color: $--color-white;
+    border: 1px solid $--color-grey;
+    min-height: 750px;
+    padding: 15px;
  }
 
  &__list {
@@ -51,21 +51,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 325px;
+    min-height: 325px;
     list-style: none;
     text-align: left;
  }
 
- &__items {
-     font-size: 18px;
-     color: $--color-black;
-     width: fit-content;
-
-     &:hover {
-        cursor: pointer;
-        border-bottom: 1px solid $--color-black;
-     }
- }
 }
 
 @media all and (min-width:768px) {
