@@ -22,9 +22,7 @@ function App() {
     localStorage.get('inputSearch', '')
   );
 
-  const [favourites, setFavourites] = useState(
-    localStorage.get('favourites', [])
-  );
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     if (dataMobile.length === 0) {
@@ -37,8 +35,7 @@ function App() {
   useEffect(() => {
     localStorage.set('dataMobile', dataMobile);
     localStorage.set('inputSearch', inputSearch);
-    localStorage.set('favourites', favourites);
-  }, [dataMobile, inputSearch, favourites]);
+  }, [dataMobile, inputSearch]);
 
   // ------ CESTA DE LA COMPRA   ------
 
@@ -51,8 +48,6 @@ function App() {
   //BORRAR MOVIL DE FAVORITOS
   const deleteFavourite = () => {
     favourites.splice(favourites, 1);
-
-    console.log('fav', favourites);
   };
 
   //------------ FILTRADO POR MODELO Y MARCA
