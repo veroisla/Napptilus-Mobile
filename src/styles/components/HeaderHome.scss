@@ -62,10 +62,17 @@
 @media all and (min-width:768px) {
 
     .header {
-    
+
     &__LogoAndNav {
        margin:  0px 60px 0px 60px;
     }    
+    }
+
+    .nav {
+        &__container {
+            width: 95%;
+            margin: 30px;
+        }
     }
  }
 

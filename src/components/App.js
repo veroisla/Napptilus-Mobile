@@ -7,6 +7,7 @@ import HeaderHome from '../components/HeaderHome';
 import Search from '../components/Search';
 import Item from '../components/Item';
 import Description from '../components/Description';
+import ArrowUp from '../components/ArrowUp';
 
 import getApiData from '../services/listProducts';
 import localStorage from '../services/localStorage';
@@ -21,7 +22,9 @@ function App() {
     localStorage.get('inputSearch', '')
   );
 
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState(
+    localStorage.get('favourites', [])
+  );
 
   useEffect(() => {
     if (dataMobile.length === 0) {
@@ -34,7 +37,8 @@ function App() {
   useEffect(() => {
     localStorage.set('dataMobile', dataMobile);
     localStorage.set('inputSearch', inputSearch);
-  }, [dataMobile, inputSearch]);
+    localStorage.set('favourites', favourites);
+  }, [dataMobile, inputSearch, favourites]);
 
   // ------ CESTA DE LA COMPRA   ------
 
@@ -93,6 +97,7 @@ function App() {
                 PreventSubmitForm={PreventSubmitForm}
               />
               <Item dataMobile={results} inputSearch={inputSearch} />
+              <ArrowUp />
             </>
           }
         />

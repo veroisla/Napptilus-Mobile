@@ -1,0 +1,41 @@
+@import "../../styles/Core/Reset.scss";
+@import "../../styles/Core/Vars.scss";
+
+
+.arrow {
+    
+    &__icon {
+    display: flex;
+    position: fixed;
+    z-index: 300;
+    bottom: 20px;
+    right: 15px;
+    cursor: pointer;
+    color: $--color-black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 50px;
+    
+    &:hover {
+     border: 1px solid $--color-black;   
+    }
+    }
+    
+    &__show {
+        opacity: 100;
+    }
+
+    &__notShow {
+        opacity: 0;
+    }
+
+    @media all and (min-width:768px) {
+        &__icon {
+            bottom: 40px;
+            right: 40px;
+            font-size: 25px;
+        }
+    }
+
+}
